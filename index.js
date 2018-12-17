@@ -27,13 +27,13 @@ restService.post("/echo", function(req, res) {
     {
         request.post({url: 'https://forserene.com/mini/dbcreate.php', form :{ slack:speech}}, function(err, httpResponse, body)
         {
-            //if (!err && httpResponse.statusCode == 200)
-            //{
+            if (!err && httpResponse.statusCode == 200)
+            {
                 return res.json({
                     speech: "database created successfully",
                     displayText: "database created successfully",
                     source: "webhook-echo-sample"});
-            /*}
+            }
             else
             {
                     //failure
@@ -41,7 +41,7 @@ restService.post("/echo", function(req, res) {
                     speech: "database creation failed",
                     displayText: "database creation failed",
                     source: "webhook-echo-sample"});
-            }*/
+            }
         });
     } 
     else
