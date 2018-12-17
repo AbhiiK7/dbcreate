@@ -25,21 +25,21 @@ restService.post("/echo", function(req, res) {
         //create post request post variable =  speech
     if (speech !== null || speech !== '')
     {
-        request.post({url: 'https://forserene.com/mini/myDB.php', form :{ slack:speech}}, function(err, httpResponse, body)
+        request.post({url: 'https://forserene.com/mini/dbcreate.php', form :{ slack:speech}}, function(err, httpResponse, body)
         {
             if (!err && httpResponse.statusCode == 200)
             {
                 return res.json({
-                    speech: httpResponse.msg,
-                    displayText: httpResponse.msg,
+                    speech: httpResponse,
+                    displayText: httpResponse,
                     source: "webhook-echo-sample"});
             }
             else
             {
                     //failure
                 return res.json({
-                    speech: httpResponse.msg,
-                    displayText: httpResponse.msg,
+                    speech: httpResponse,
+                    displayText: httpResponse,
                     source: "webhook-echo-sample"});
             }
         });
