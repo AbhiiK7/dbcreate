@@ -38,8 +38,8 @@ restService.post("/echo", function(req, res) {
             {
                     //failure
                 return res.json({
-                    speech: err,
-                    displayText: err,
+                    speech: httpResponse.msg,
+                    displayText: httpResponse.msg,
                     source: "webhook-echo-sample"});
             }
         });
