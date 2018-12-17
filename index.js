@@ -38,8 +38,8 @@ restService.post("/echo", function(req, res) {
             {
                     //failure
                 return res.json({
-                    speech: "database creation failed",
-                    displayText: "database creation failed",
+                    speech: err,
+                    displayText: err,
                     source: "webhook-echo-sample"});
             }
         });
