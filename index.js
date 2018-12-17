@@ -27,7 +27,7 @@ restService.post("/echo", function(req, res) {
         request.post({url: 'https://forserene.com/mini/dbcreate.php',
             form :{ slack:speech}},
             function (err, httpResponse, body) {
-                if (!error && response.statusCode == 200) {
+                if (!err && httpResponse.statusCode == 200) {
                     return res.json({
                         speech: "database created successfully",
                         displayText: "database created successfully",
