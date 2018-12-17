@@ -23,27 +23,29 @@ restService.post("/echo", function(req, res) {
 
 
         //create post request post variable =  speech
-    if (speech !== null || speech !== ''){
-        request.post({url: 'https://forserene.com/mini/dbcreate.php',
-            form :{ slack:speech}},
-            function (err, httpResponse, body) {
-                if (!err && httpResponse.statusCode == 200) {
-                    return res.json({
-                        speech: "database created successfully",
-                        displayText: "database created successfully",
-                        source: "webhook-echo-sample"
-                    });
-                }else{
+    if (speech !== null || speech !== '')
+    {
+        request.post({url: 'https://forserene.com/mini/dbcreate.php', form :{ slack:speech}}, function(err, httpResponse, body)
+        {
+            //if (!err && httpResponse.statusCode == 200)
+            //{
+                return res.json({
+                    speech: "database created successfully",
+                    displayText: "database created successfully",
+                    source: "webhook-echo-sample"});
+            /*}
+            else
+            {
                     //failure
-                    return res.json({
-                        speech: "database creation failed",
-                        displayText: "database creation failed",
-                        source: "webhook-echo-sample"
-                    });
-                }
-            }
-        );
-    } else{
+                return res.json({
+                    speech: "database creation failed",
+                    displayText: "database creation failed",
+                    source: "webhook-echo-sample"});
+            }*/
+        });
+    } 
+    else
+    {
         //submit return message to the user
         return res.json({
             speech: "Please enter database name",
