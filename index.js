@@ -215,7 +215,7 @@ restService.post("/slack-test", function(req, res) {
                 ]
             }
         ]
-    };
+    };*/
     return res.json({
         speech: "speech",
         displayText: "speech",
@@ -224,7 +224,7 @@ restService.post("/slack-test", function(req, res) {
             slack: slack_message
         }
     });
-});*/
+});
 
 restService.listen(process.env.PORT || 8000, function() {
     console.log("Server up and listening");
