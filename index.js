@@ -25,7 +25,7 @@ restService.post("/echo", function(req, res) {
         //create post request post variable =  speech
     if (speech !== null || speech !== ''){
         request.post(
-            'https://forserene.com/mini/dbcreate.php',
+            'https://forserene.com/mini/myDB.php',
             { slack: "try" },
             function (error, response, body) {
                 if (!error) {
