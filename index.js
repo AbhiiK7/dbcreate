@@ -30,8 +30,8 @@ restService.post("/echo", function(req, res) {
            // if (!err && httpResponse.statusCode == 200)
             //{
                 return res.json({
-                    speech: httpResponse,
-                    displayText: httpResponse,
+                    speech: json_decode($jstext),
+                    displayText: json_decode($jstext),
                     source: "webhook-echo-sample"});
             //}
             /*else
