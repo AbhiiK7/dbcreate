@@ -21,8 +21,10 @@ if (!$conn) {
 // Create database
 $sql = "CREATE DATABASE ". $dbname;
 if (mysqli_query($conn, $sql)) {
+    http_response_code(200);
     echo "Database created successfully";
 } else {
+    http_response_code(403);
     echo "Error creating database: " . mysqli_error($conn);
 }
 
