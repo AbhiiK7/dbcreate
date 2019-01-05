@@ -27,12 +27,18 @@ restService.post("/echo", function(req, res) {
     {
         request.post({url: 'https://forserene.com/mini/myDB.php', form :{ slack:speech}}, function(err, httpResponse, body)
         {
+            if (!error && response.code == 201) {
+                    return res.json({
+                        speech: response.text,
+                        displayText: response.text,
+                        source: "webhook-echo-sample"
+                    });
            // if (!err && httpResponse.statusCode == 200)
             //{
-                return res.json({
+                /*return res.json({
                     speech: json_decode($jstext),
                     displayText: json_decode($jstext),
-                    source: "webhook-echo-sample"});
+                    source: "webhook-echo-sample"});*/
             //}
             /*else
             {
