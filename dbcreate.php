@@ -21,11 +21,11 @@ if (!$conn) {
 // Create database
 $sql = "CREATE DATABASE ". $dbname;
 if (mysqli_query($conn, $sql)) {
-    http_response_code(200);
-    echo "Database created successfully";
+	http_response_code(201);
+    $text = "Database created successfully";
 } else {
-    http_response_code(403);
-    echo "Error creating database: " . mysqli_error($conn);
+	http_response_code(403);
+    $text =  "Error creating database: " . mysqli_error($conn);
 }
 
 mysqli_close($conn);
